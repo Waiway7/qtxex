@@ -3,15 +3,15 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 import org.openqa.selenium.WebDriver;
 
-public class SuperTest {
+public abstract class SuperTest {
 	
 	protected WebDriver driver;
-	protected String url() {return "http://the-internet.herokuapp.com/";};
-  @BeforeTest
+	protected String baseUrl;
+	
+	@BeforeTest
 	public void beforeTest() {
 		driver = DriverManagerFactory.getManager(DriverType.CHROME).getDriver();
-		String directedUrl = url();
-		driver.navigate().to(directedUrl);
+		baseUrl = "http://the-internet.herokuapp.com/";
 //		driver = getWebDriver();
 	}
 	
@@ -19,7 +19,6 @@ public class SuperTest {
 	@AfterTest
 	public void afterTest() {
 		driver.quit();
-		System.out.println("hello world");
 	}
 	
 }
