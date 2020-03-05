@@ -1,3 +1,5 @@
+package test;
+import page_objects.CheckPageObject;
 import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;

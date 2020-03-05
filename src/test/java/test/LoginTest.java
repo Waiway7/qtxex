@@ -1,7 +1,7 @@
-
+package test;
+import page_objects.LoginPageObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 
 public class LoginTest extends SuperTest{
 
