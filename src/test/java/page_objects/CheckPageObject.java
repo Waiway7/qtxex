@@ -14,7 +14,6 @@ public class CheckPageObject extends SuperPageObject{
 	}
 	
 	public CheckPageObject canCheckBoxes() {
-		
 		for(WebElement box : getCheckBoxes()) {
 			if (!box.isSelected()) {
 				box.click();	
