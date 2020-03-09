@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import page_objects.CheckPageObject;
 import page_objects.DropDownPageObject;
 import page_objects.LoginPageObject;
+import page_objects.SliderPageObject;
 
 public class TheInternet extends SuperTest {
 	public class LoginTest {
@@ -60,6 +61,19 @@ public class TheInternet extends SuperTest {
 				String errorMessege = "Failed to select Checkbox " + checkBoxNum;
 				Assert.assertTrue(checkBoxes.get(i).isSelected(), errorMessege);
 			}
+		}
+	}
+	
+	public class SliderTest {
+		
+		@Test
+		public void canMoveSlider() {
+			WebElement sliderValue = new SliderPageObject(driver, baseUrl)
+								.openSliderPage()
+								.moveSliderToMaxValue(driver)
+								.findSelectSlider();
+			String expectedValue = "5";
+			Assert.assertEquals(sliderValue.getAttribute("value"), expectedValue, "Incorrect Slider Value");
 		}
 	}
 }
