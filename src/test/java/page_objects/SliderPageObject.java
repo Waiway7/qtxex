@@ -19,6 +19,10 @@ public class SliderPageObject extends SuperPageObject {
 		return driver.findElement(By.cssSelector("input"));
 	}
 	
+	public String findSliderValue() {
+		return findSelectSlider().getAttribute("value");
+	}
+	
 	public SliderPageObject moveSliderToMaxValue(WebDriver driver) {
 		Actions move = new Actions(driver);
 		WebElement slider = findSelectSlider();

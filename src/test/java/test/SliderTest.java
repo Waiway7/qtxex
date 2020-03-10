@@ -8,11 +8,11 @@ public class SliderTest extends SuperTest{
 	
 	@Test
 	public void canMoveSlider() {
-		WebElement sliderValue = new SliderPageObject(driver, baseUrl)
-							.openSliderPage()
-							.moveSliderToMaxValue(driver)
-							.findSelectSlider();
+		String actualSliderValue = new SliderPageObject(driver, baseUrl)
+									.openSliderPage()
+									.moveSliderToMaxValue(driver)
+									.findSliderValue();
 		String expectedValue = "5";
-		Assert.assertEquals(sliderValue.getAttribute("value"), expectedValue, "Incorrect Slider Value");
+		Assert.assertEquals(actualSliderValue, expectedValue, "Incorrect Slider Value");
 	}
 }

@@ -19,23 +19,3 @@ public class DropDownTest extends SuperTest{
 	
 }
 
-
-//@Override
-//protected String url() {
-//	return "http://the-internet.herokuapp.com/dropdown";
-//}
-
-//@Test
-//public void canNavigateToDropDown() {
-//	//arrange
-//	String expectedHeader = new String("Dropdown List");
-//	
-//	//act
-//	WebElement dropDownLink = driver.findElement(
-//			By.xpath("//*[text()[contains(.,'Dropdown')]]"));
-//	dropDownLink.click();
-//	
-//	//assert
-//	WebElement header = driver.findElement(By.tagName("h3"));
-//	Assert.assertEquals(header.getText(), expectedHeader, "Wrong webpage!");
-//}
