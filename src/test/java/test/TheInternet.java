@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import page_objects.CheckPageObject;
 import page_objects.DropDownPageObject;
+import page_objects.InputPageObject;
 import page_objects.LoginPageObject;
 import page_objects.SliderPageObject;
 
@@ -26,11 +28,12 @@ public class TheInternet extends SuperTest {
 					.login(username, password)
 					.getLoginConfirmationMessage();
 		
-//			//assert
+			//assert
 			String expectedText = new String("Logout");		
 			Assert.assertEquals(actualGreenBoxText, expectedText, "Cannot Login");
 		}
 	}
+	
 	public class DropDownTest {
 		
 		@Test
@@ -46,6 +49,7 @@ public class TheInternet extends SuperTest {
 		}
 		
 	}
+	
 	public class CheckTest {
 	
 		@Test
@@ -65,7 +69,6 @@ public class TheInternet extends SuperTest {
 	}
 	
 	public class SliderTest {
-		
 		@Test
 		public void canMoveSlider() {
 			WebElement sliderValue = new SliderPageObject(driver, baseUrl)
@@ -74,6 +77,27 @@ public class TheInternet extends SuperTest {
 								.findSelectSlider();
 			String expectedValue = "5";
 			Assert.assertEquals(sliderValue.getAttribute("value"), expectedValue, "Incorrect Slider Value");
+		}
+	}
+	
+	public class InputTest{
+		@Test(dataProvider = "numberData")
+		public void canTypeInInputField(int number) {
+			String inputValue = new InputPageObject(driver, baseUrl)
+								.openInputPage()
+								.setInputValue(number)
+								.waitForValue()
+								.getInputValue();
+		
+		String expectedValue = String.valueOf(number);
+		
+		Assert.assertEquals(inputValue, expectedValue);
+	}
+	
+		@DataProvider(name = "numberData")
+		public Object[] getNumberData() {
+
+			return new Object[] {2,3,5,8,13}; 
 		}
 	}
 }
