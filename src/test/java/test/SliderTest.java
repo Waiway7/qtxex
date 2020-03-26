@@ -1,4 +1,6 @@
 package test;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,6 +15,6 @@ public class SliderTest extends SuperTest{
 									.moveSliderToMaxValue(driver)
 									.findSliderValue();
 		String expectedValue = "5";
-		Assert.assertEquals(actualSliderValue, expectedValue, "Incorrect Slider Value");
+		AssertJUnit.assertEquals(actualSliderValue, expectedValue, "Incorrect Slider Value");
 	}
 }

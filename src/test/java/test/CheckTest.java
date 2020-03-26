@@ -1,4 +1,5 @@
 package test;
+import org.testng.annotations.Test;
 import page_objects.CheckPageObject;
 import java.util.List;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ public class CheckTest extends SuperTest{
 
 	@Test
 	public void canCheckAll() {
-	
+		
 		List <WebElement> checkBoxes = new CheckPageObject(driver, baseUrl)
 											.openCheckPage()
 											.canCheckBoxes()

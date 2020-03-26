@@ -1,12 +1,12 @@
 package test;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
 import page_objects.CheckPageObject;
 import page_objects.DropDownPageObject;
 import page_objects.InputPageObject;
@@ -45,8 +45,7 @@ public class TheInternet extends SuperTest {
 					.openDropDownPage()
 					.setDropDownList(expectedSelection)
 					.getDropDownListValue();
-			Assert.assertEquals(actualSelection, expectedSelection, "Cannot select a dropdown list value");
-		}
+			Assert.assertEquals(actualSelection, expectedSelection, "Cannot select a dropdown list value");		}
 		
 	}
 	
@@ -61,9 +60,9 @@ public class TheInternet extends SuperTest {
 			
 			
 			for (int i = 0; i < checkBoxes.size(); i++) {
-				String checkBoxNum = String.format("%s", i+1);
-				String errorMessege = "Failed to select Checkbox " + checkBoxNum;
-				Assert.assertTrue(checkBoxes.get(i).isSelected(), errorMessege);
+				String checkBoxNum = String.format("%s", i+1); 
+				String errorMessage = "Failed to select Checkbox " + checkBoxNum;;
+				Assert.assertTrue(checkBoxes.get(i).isSelected(), errorMessage);
 			}
 		}
 	}

@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 import org.openqa.selenium.WebDriver;
 
-
 public abstract class SuperTest {
 	
 	protected WebDriver driver;
