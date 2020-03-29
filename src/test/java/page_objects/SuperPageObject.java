@@ -15,7 +15,7 @@ public class SuperPageObject {
 	protected SuperPageObject(WebDriver driverInstance, String base) {
 		baseUrl = base;
 		driver = driverInstance;
-		wait = new WebDriverWait(driverInstance, 10);
+		wait = new WebDriverWait(driverInstance, 30);
 		PageFactory.initElements(driver, this);
 	}
 	

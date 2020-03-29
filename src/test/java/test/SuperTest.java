@@ -21,7 +21,7 @@ public abstract class SuperTest {
 
 	@AfterTest
 	public void afterTest() {
-		driver.quit();
+//		driver.quit();
 	}
 	
 }

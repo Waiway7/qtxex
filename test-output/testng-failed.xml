@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="homework.FilePathTest">
+      <class name="sqlex.TestSQLExerciseTwo">
         <methods>
-          <include name="clickFileDownload"/>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
+          <include name="deleteNewStore"/>
         </methods>
-      </class> <!-- homework.FilePathTest -->
+      </class> <!-- sqlex.TestSQLExerciseTwo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
