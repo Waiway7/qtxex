@@ -15,7 +15,6 @@ public abstract class SuperTest {
 	public void beforeTest() {
 		driver = DriverManagerFactory.getManager(DriverType.CHROME).getDriver();
 		baseUrl = "http://the-internet.herokuapp.com/";
-//		driver = getWebDriver();
 	}
 	
 
