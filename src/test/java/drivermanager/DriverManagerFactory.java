@@ -2,15 +2,15 @@ package drivermanager;
 
 public class DriverManagerFactory {
 	
-	public static DriverManager getManager(DriverType type) {
+	public static DriverManager getManager(String browserType) {
 		
-		switch(type) {
-		case CHROME:
+		if(browserType.equals(DriverType.Chrome)) {
 			return new ChromeDriverManager();
-		default:
-			System.out.println(type + " is not a supported driver.");
-			break;
 		}
-		return null;
+		else if(browserType.equals(DriverType.FireFox)) {
+			return new FireFoxManager();
+		}
+			
+		throw new RuntimeException(browserType + " is not a supported browser.");
 	}
 }

@@ -1,4 +1,5 @@
 package drivermanager;
-public enum DriverType {
-	CHROME
+public class DriverType {
+	public static final String Chrome = "chrome";
+	public static final String FireFox = "firefox";
 }

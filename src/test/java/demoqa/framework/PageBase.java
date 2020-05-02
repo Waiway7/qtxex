@@ -9,7 +9,7 @@ public abstract class PageBase {
 	
 	public PageBase(WebDriver driver, String baseUrl) {
 		this.driver = driver;
-		this.baseUrl = baseUrl;
+		this.baseUrl = "https://demoqa.com/";
 		
 		PageFactory.initElements(driver, this);
 	}

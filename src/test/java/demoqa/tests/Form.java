@@ -4,10 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import demoqa.dataBuilders.*;
-import demoqa.framework.DemoQaTestBase;
+import demoqa.framework.DqTestBase;
 import demoqa.pages.FormsPage;
 
-public class Form extends DemoQaTestBase{
+public class Form extends DqTestBase{
 
 	@Test
 	public void canFillTopPartOfFormUsingConventialPattern() {
